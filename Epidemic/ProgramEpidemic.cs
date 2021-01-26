@@ -7,8 +7,8 @@ namespace Epidemic
     {
         static List<Person> discoDancers = new List<Person>();
         static int dancersAtDisco = 50;
-        static int hoursPassed = 0;
-        static int infectiousDancers;
+        static int hoursPassed = 1;
+        static int infectiousDancers = 0;
         static int immuneDancers;
         static void Main(string[] args)
         {
@@ -43,21 +43,25 @@ namespace Epidemic
         private static void InfectIndex0()
         {
             discoDancers[0].Infected = true;
+            discoDancers[0].InfectedWhen = 0;
             infectiousDancers++;
         }
 
         private static void CalculateStatus(int hoursPassed)
         {
-            for (int i = 0; i < discoDancers.Count; i += 2)
+            int i;
+            for (i = 0; i < discoDancers.Count; i += 2)
             {
-                if (discoDancers[i].Infected == true)
+                if (discoDancers[i].Infected == true && discoDancers[i].InfectedWhen < hoursPassed)
                 {
-                    infectiousDancers++;
-                    for (int j = 0; j < discoDancers.Count; j++)
+                   
+                    for (int j = i; j < discoDancers.Count; j++)
                     {
                         if (discoDancers[j].Infected == false)
                         {
                             discoDancers[j].Infected = true;
+                            discoDancers[j].InfectedWhen = hoursPassed;
+                            infectiousDancers++;
                         } 
                     }
                 }
