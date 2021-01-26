@@ -5,13 +5,12 @@ namespace CashMachine
 {
     class ProgramCashMachine
     {
-        static string[] transactions = new string[3];
+        static string[] transactionsArr = new string[3];
+        static int totalTransactions;
         static void Main(string[] args)
         {
             double balance = 1000;
             bool exitProgram = false;
-
-
 
             do
             {
@@ -33,7 +32,7 @@ namespace CashMachine
                         balance = MakeWithdrawal(balance);
                         break;
                     case ConsoleKey.B:
-                        ShowSaldo(balance);
+                        ShowBalance(balance);
                         break;
                     case ConsoleKey.S:
                         ShowTransactions();
@@ -66,10 +65,36 @@ namespace CashMachine
                 Console.WriteLine($"You have deposited {value:C}.");
                 balance += value;
                 Console.WriteLine($"Current balance: {balance:C}");
+
+                //PushLeft(transactionsArr, 1);
+                string transactionSaved = transactionsArr[totalTransactions % transactionsArr.Length];
+                transactionSaved = $"{DateTime.Now}: +{value:C}";
+                totalTransactions++;
             }
             Console.WriteLine();
             Console.WriteLine();
             return balance;
+        }
+
+        private static void PushLeft(string[] arr, int pushes)
+        {
+            string[] pushedArr = new string[3];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i < arr.Length - pushes)
+                {
+                    pushedArr[i] = arr[i + pushes];
+                }
+                else
+                {
+                    pushedArr[i] = arr[i];
+                }
+
+            }
+            foreach (string item in pushedArr)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static double MakeWithdrawal(double balance)
@@ -101,13 +126,16 @@ namespace CashMachine
                 Console.WriteLine($"You have successfully withdrawn {value:C}.");
                 balance -= value;
                 Console.WriteLine($"Current balance: {balance:C}");
+
+                transactionsArr[totalTransactions % transactionsArr.Length] = $"{DateTime.Now}: +{value:C}";
+                totalTransactions++;
             }
             Console.WriteLine();
             Console.WriteLine();
             return balance;
         }
 
-        private static void ShowSaldo(double balance)
+        private static void ShowBalance(double balance)
         {
             Console.Write($"Your current balance is: {balance:C}");
             Console.WriteLine();
@@ -115,7 +143,16 @@ namespace CashMachine
         }
         private static void ShowTransactions()
         {
-            throw new NotImplementedException();
+            {
+                int latestTransaction = (totalTransactions - 1) % transactionsArr.Length;
+                //totalTransactions += transactionsArr.Length;
+                for (int i = latestTransaction; i >= 0; i--)
+                {
+                    Console.WriteLine(transactionsArr[i]);
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         private static bool TerminateProgram()
