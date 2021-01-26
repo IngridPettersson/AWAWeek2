@@ -9,83 +9,116 @@ namespace Epidemic
         static int dancersAtDisco = 50;
         static int hoursPassed = 0;
         static int infectiousDancers = 0;
-        static int immuneDancers;
+        static int immuneDancers = 0;
         static void Main(string[] args)
         {
             AddPeopleToList();
             InfectCaseZero();
-            // Each infected person infects 1 other person per hour, so expontential increase. After 6 hours all will be infected (64 but we only have 50 dancers) 
-            // and 1 will be immune, so 49 infected and 1 immune. After 12 hours all will be immune and noone infected.
-            CalculateInfected(hoursPassed);
-            CalculateImmune(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
+            Console.WriteLine("We do have a pandemic... click yourself through Tegnells hourly updates!");
             Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
+            Console.Clear();
             ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
+            Console.WriteLine();
+
+            while (immuneDancers != discoDancers.Count)
+            {
+                Console.WriteLine("Press any key to make time fly!");
+                Console.ReadLine();
+                Console.Clear();
+                hoursPassed++;
+                CalculateInfected(hoursPassed);
+                CalculateImmune(hoursPassed);
+                ListenToTegnell();
+                Console.WriteLine();
+            }
+
+            Console.Clear();
+            Console.WriteLine($"Wohooo we're all infected and immune after just {hoursPassed} hours! Must have been a Swedish disco ;)");
             Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
-            hoursPassed++;
-            CalculateInfected(hoursPassed);
-            ListenToTegnell();
-            Console.WriteLine("Press any key to make time fly!");
-            Console.ReadLine();
+
+
+
+
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
+            //hoursPassed++;
+            //CalculateInfected(hoursPassed);
+            //CalculateImmune(hoursPassed);
+            //ListenToTegnell();
+            //Console.WriteLine("Press any key to make time fly!");
+            //Console.ReadLine();
         }
 
         private static void AddPeopleToList()
@@ -101,7 +134,6 @@ namespace Epidemic
             discoDancers[0].Infected = true;
             discoDancers[0].InfectedWhen = 0;
             infectiousDancers++;
-            hoursPassed++;
         }
 
         private static void CalculateInfected(int hoursPassed)
@@ -136,7 +168,9 @@ namespace Epidemic
             {
                 if (discoDancers[i].Infected == true && hoursPassed - discoDancers[i].InfectedWhen == 5)
                 {
-
+                    discoDancers[i].Immune = true;
+                    immuneDancers++;
+                    infectiousDancers--;
                 }
             }
         }
@@ -145,7 +179,7 @@ namespace Epidemic
         {
             Console.Write($"Hours passed: {hoursPassed}\n");
             Console.Write($"Infected: {infectiousDancers}\n");
-            Console.Write($"Immune: ...\n");
+            Console.Write($"Immune: {immuneDancers}\n");
 
         }
     }
