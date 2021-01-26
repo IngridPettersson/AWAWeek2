@@ -6,13 +6,10 @@ namespace Epidemic
 {
     class Person
     {
-        public string Name { get; set; }
         public bool Infected { get; set; }
+        // Person gets well again after 5 hours
         public int InfectedWhen { get; set; }
+        // When the person gets well after 5 hours (s)he can not get infected again
         public bool Immune { get; set; }
-        public Person(string name)
-        {
-            Name = name;
-        }
     }
 }
