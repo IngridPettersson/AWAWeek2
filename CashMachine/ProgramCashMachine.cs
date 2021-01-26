@@ -67,34 +67,12 @@ namespace CashMachine
                 Console.WriteLine($"Current balance: {balance:C}");
 
                 //PushLeft(transactionsArr, 1);
-                string transactionSaved = transactionsArr[totalTransactions % transactionsArr.Length];
-                transactionSaved = $"{DateTime.Now}: +{value:C}";
+                transactionsArr[totalTransactions % transactionsArr.Length] = $"{DateTime.Now}: +{value:C}";
                 totalTransactions++;
             }
             Console.WriteLine();
             Console.WriteLine();
             return balance;
-        }
-
-        private static void PushLeft(string[] arr, int pushes)
-        {
-            string[] pushedArr = new string[3];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (i < arr.Length - pushes)
-                {
-                    pushedArr[i] = arr[i + pushes];
-                }
-                else
-                {
-                    pushedArr[i] = arr[i];
-                }
-
-            }
-            foreach (string item in pushedArr)
-            {
-                Console.WriteLine(item);
-            }
         }
 
         private static double MakeWithdrawal(double balance)
@@ -127,7 +105,7 @@ namespace CashMachine
                 balance -= value;
                 Console.WriteLine($"Current balance: {balance:C}");
 
-                transactionsArr[totalTransactions % transactionsArr.Length] = $"{DateTime.Now}: +{value:C}";
+                transactionsArr[totalTransactions % transactionsArr.Length] = $"{DateTime.Now}: -{value:C}";
                 totalTransactions++;
             }
             Console.WriteLine();
@@ -147,6 +125,10 @@ namespace CashMachine
                 int latestTransaction = (totalTransactions - 1) % transactionsArr.Length;
                 //totalTransactions += transactionsArr.Length;
                 for (int i = latestTransaction; i >= 0; i--)
+                {
+                    Console.WriteLine(transactionsArr[i]);
+                }
+                for (int i = transactionsArr.Length - 1; i > latestTransaction; i--)
                 {
                     Console.WriteLine(transactionsArr[i]);
                 }
