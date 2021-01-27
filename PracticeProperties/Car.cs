@@ -48,8 +48,29 @@ namespace PracticeProperties
             }
             else
             {
-                throw Exception;
+                throw new Exception();
             }
         }
+
+        public string GetColor()
+        {
+            string colorInSwedish;
+
+            if (color == "green")
+                colorInSwedish = "grön";
+            else if (color == "blue")
+                colorInSwedish = "blå";
+            else if (color == "yellow")
+                colorInSwedish = "gul";
+            else if (color == "red")
+                colorInSwedish = "röd";
+            else
+                colorInSwedish = "färg okänd";
+
+
+
+            return colorInSwedish;
+        }
+
     }
 }
