@@ -6,7 +6,7 @@ namespace Epidemic
     class ProgramEpidemic
     {
         static List<Person> discoDancers = new List<Person>();
-        static int dancersAtDisco = 50;
+        static int dancersAtDisco = 1000;
         static int hoursPassed = 0;
         static int infectiousDancers = 0;
         static int immuneDancers = 0;
