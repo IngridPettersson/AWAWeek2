@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="P:MyClassLibrary.LivingPerson.Age">
+            <summary>
+            Sets and gets the age of a living person. Valid ages 0 - 120. 
+            </summary>
+        </member>
+        <member name="M:MyClassLibrary.LivingPerson.SomeMethod(System.Int32)">
+            <summary>
+            Does it's thing.
+            </summary>
+            <param name="aValue">A very nice parameter.</param>
+        </member>
+    </members>
+</doc>

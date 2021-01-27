@@ -5,7 +5,7 @@ namespace CashMachine
 {
     class ProgramCashMachine
     {
-        static string[] transactionsArr = new string[3];
+        static string[] transactionsArr = new string[10];
         static int totalTransactions;
         static void Main(string[] args)
         {
@@ -14,7 +14,7 @@ namespace CashMachine
 
             do
             {
-                Console.WriteLine("I am your ATM. Press key D, W, B or T to choose what you want to do:\n");
+                Console.WriteLine("I am your ATM. Press key \"D\", \"W\", \"B\" or \"T\" to choose what you want to do:\n");
                 Console.WriteLine("[D]eopist");
                 Console.WriteLine("[W]ithdrawal");
                 Console.WriteLine("[B]alance");
@@ -122,6 +122,7 @@ namespace CashMachine
         private static void ShowTransactions()
         {
             {
+                Console.WriteLine("Latest transactions:\n".ToUpper());
                 int latestTransaction = (totalTransactions - 1) % transactionsArr.Length;
                 //totalTransactions += transactionsArr.Length;
                 for (int i = latestTransaction; i >= 0; i--)

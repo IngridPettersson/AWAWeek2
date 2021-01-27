@@ -32,7 +32,7 @@ namespace Epidemic
                 Console.WriteLine();
             }
 
-            Console.WriteLine($"Wohooo we're all infected and immune after just {hoursPassed} hours! Must have been a Swedish disco ;)");
+            Console.WriteLine($"Wohooo - {dancersAtDisco} dancers infected and immune after just {hoursPassed} hours! Must have been a Swedish disco ;)");
             Console.ReadLine();
         }
 
