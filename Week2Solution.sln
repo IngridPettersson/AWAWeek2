@@ -13,11 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDemo", "PropertyDem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyClassLibrary", "MyClassLibrary\MyClassLibrary.csproj", "{162F63A1-7A34-4A72-9C48-9A1824420BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TernaryOperator", "TernaryOperator\TernaryOperator.csproj", "{52582B2B-4CEC-49BF-B1F1-C71FAD4DBFC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TernaryOperator", "TernaryOperator\TernaryOperator.csproj", "{52582B2B-4CEC-49BF-B1F1-C71FAD4DBFC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProperties", "PracticeProperties\PracticeProperties.csproj", "{B78EDAD9-4221-4250-A8DF-2207EF56298F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeProperties", "PracticeProperties\PracticeProperties.csproj", "{B78EDAD9-4221-4250-A8DF-2207EF56298F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProperties2", "PracticeProperties2\PracticeProperties2.csproj", "{14D23F11-9923-4E39-9C0C-8E8CFA85387F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeProperties2", "PracticeProperties2\PracticeProperties2.csproj", "{14D23F11-9923-4E39-9C0C-8E8CFA85387F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TuplesDemo", "TuplesDemo\TuplesDemo.csproj", "{742290D8-D941-48B5-882A-7C02B3D4E262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNumber", "GuessTheNumber\GuessTheNumber.csproj", "{D230F5F4-E227-46E3-87EE-02E7767DC83B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742290D8-D941-48B5-882A-7C02B3D4E262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742290D8-D941-48B5-882A-7C02B3D4E262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742290D8-D941-48B5-882A-7C02B3D4E262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742290D8-D941-48B5-882A-7C02B3D4E262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

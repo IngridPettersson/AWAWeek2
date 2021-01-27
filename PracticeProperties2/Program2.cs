@@ -2,7 +2,7 @@
 
 namespace PracticeProperties2
 {
-    class Program
+    class Program2
     {
         static int addedCars = 0;
 
@@ -28,7 +28,7 @@ namespace PracticeProperties2
 
             for (int i = 0; i < addedCars; i++)
             {
-                Console.WriteLine($"\nCAR {i + 1}\nLicense number: {cars[i].GetLicenseNumber()}\nColor: {cars[i].GetColor()}");
+                Console.WriteLine($"\nCAR {i + 1}\nLicense number: {cars[i].LicenseNumber}\nColor: {cars[i].GetColor()}");
             }
         }
 
@@ -36,9 +36,10 @@ namespace PracticeProperties2
         {
             Car car = new Car();
 
+            car.LicenseNumber = 
+            Console.WriteLine(car.LicenseNumber);
 
-            string inputLicNum = car.SetLicenseNumber();
-            car.GetLicenseNumber();
+            //car.GetLicenseNumber();
             string inputColor = Car.AskForColor();
             car.SetColor(inputColor);
             car.GetColor();
