@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PracticeProperties
+namespace PracticeProperties2
 {
     class Program
     {
@@ -36,17 +36,16 @@ namespace PracticeProperties
         {
             Car car = new Car();
 
-            
+
             string inputLicNum = car.SetLicenseNumber();
             car.GetLicenseNumber();
             string inputColor = Car.AskForColor();
             car.SetColor(inputColor);
             car.GetColor();
-            
+
 
             return car;
 
         }
-
     }
 }

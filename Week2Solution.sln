@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TernaryOperator", "TernaryO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProperties", "PracticeProperties\PracticeProperties.csproj", "{B78EDAD9-4221-4250-A8DF-2207EF56298F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProperties2", "PracticeProperties2\PracticeProperties2.csproj", "{14D23F11-9923-4E39-9C0C-8E8CFA85387F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B78EDAD9-4221-4250-A8DF-2207EF56298F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B78EDAD9-4221-4250-A8DF-2207EF56298F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B78EDAD9-4221-4250-A8DF-2207EF56298F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D23F11-9923-4E39-9C0C-8E8CFA85387F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
