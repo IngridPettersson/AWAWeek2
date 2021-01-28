@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeProperties2", "Prac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TuplesDemo", "TuplesDemo\TuplesDemo.csproj", "{742290D8-D941-48B5-882A-7C02B3D4E262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNumber", "GuessTheNumber\GuessTheNumber.csproj", "{D230F5F4-E227-46E3-87EE-02E7767DC83B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuessTheNumber", "GuessTheNumber\GuessTheNumber.csproj", "{D230F5F4-E227-46E3-87EE-02E7767DC83B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesInstancesAndConstructors", "ClassesInstancesAndConstructors\ClassesInstancesAndConstructors.csproj", "{A6D2B5BD-B1EC-4856-A05B-EBB2C2111C34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D230F5F4-E227-46E3-87EE-02E7767DC83B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D2B5BD-B1EC-4856-A05B-EBB2C2111C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D2B5BD-B1EC-4856-A05B-EBB2C2111C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D2B5BD-B1EC-4856-A05B-EBB2C2111C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D2B5BD-B1EC-4856-A05B-EBB2C2111C34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
