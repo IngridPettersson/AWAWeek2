@@ -4,16 +4,17 @@ namespace PropertiesCar
 {
     class Program
     {
-        static string inputLicenseNumber = "";
+        static string inputLicenseNumber;
+        static string inputColor;
         static bool looping = true;
 
         static void Main(string[] args)
         {
             Car[] cars = new Car[100];
+            int i = 0;
             while (looping)
             {
-                int i = 0;
-                AddCar(cars);
+                AddCar(cars, i);
                 i++;
             }
 
@@ -22,19 +23,31 @@ namespace PropertiesCar
 
         private static void PrintOut(Car[] cars)
         {
-            for
+            Console.Clear();
+            for (int i = 0; i < cars.Length; i++)
+            {
+                if (cars[i] == null)
+                    break;
+                else
+                    Console.WriteLine($"CAR {i + 1}\nLicense Number: {cars[i].LicenseNumber}\nColor: {cars[i].Color}\n");
+
+            }
         }
 
-        private static void AddCar(Car[] cars)
+        private static void AddCar(Car[] cars, int index)
         {
-            Car car = new Car();
-            GetUserInput();
-            car.LicenseNumber = inputLicenseNumber;
-
+            ConsoleKey keyPress = GetUserInput();
+            if (keyPress == ConsoleKey.A)
+            {
+                Car car = new Car();
+                car.LicenseNumber = inputLicenseNumber;
+                car.Color = inputColor;
+                cars[index] = car;
+            }
 
         }
 
-        public static void GetUserInput()
+        public static ConsoleKey GetUserInput()
         {
             Console.WriteLine("Make your choice: \n");
             Console.WriteLine("[A]dd car");
@@ -43,12 +56,17 @@ namespace PropertiesCar
 
             if (keyPress == ConsoleKey.A)
             {
-                Console.Write("\nEnter license number of car: ");
+                Console.Clear();
+                Console.Write("Enter license number of car: ");
                 inputLicenseNumber = Console.ReadLine();
+                Console.Write("\nEnter color of car (must be \"green\", \"blue\", \"red\" or \"magenta\"): ");
+                inputColor = Console.ReadLine().ToLower();
                 Console.WriteLine();
+
             }
             else
                 looping = false;
+            return keyPress;
 
         }
     }

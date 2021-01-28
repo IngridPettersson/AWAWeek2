@@ -33,11 +33,47 @@ namespace PropertiesCar
         {
             get
             {
+                switch (color)
+                {
+                    case "green":
+                        color = "grön";
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case "blue":
+                        color = "blå";
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "red":
+                        color = "röd";
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "magenta":
+                        color = "magenta";
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        break;
+                }
                 return color;
             }
             set
             {
-                color = value;
+                switch (value)
+                {
+                    case "green":
+                        color = value;
+                        break;
+                    case "blue":
+                        color = value;
+                        break;
+                    case "red":
+                        color = value;
+                        break;
+                    case "magenta":
+                        color = value;
+                        break;
+                    default:
+                        throw new Exception();
+                }
+                
             }
         }
 
