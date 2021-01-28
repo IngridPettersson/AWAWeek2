@@ -26,8 +26,8 @@ namespace Epidemic
                 Console.ReadLine();
                 Console.Clear();
                 hoursPassed++;
-                CalculateInfected(hoursPassed);
                 CalculateImmune(hoursPassed);
+                CalculateInfected(hoursPassed);
                 ListenToTegnell();
                 Console.WriteLine();
             }
@@ -51,7 +51,7 @@ namespace Epidemic
             infectiousDancers++;
         }
 
-        private static void CalculateInfected(int hoursPassed)
+        private static void CalculateInfected(int hoursPassed) //måste lägga till minus antalet som blivit immuna den här vändan! 
         {
             int i;
             for (i = 0; i < discoDancers.Count; i ++)
