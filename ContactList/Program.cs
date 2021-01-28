@@ -7,7 +7,7 @@ namespace ContactList
     {
         static List<Person> contactList = new List<Person>(); // Vill man lägga listan i Main eller i klassen Person?
         static ConsoleKey pressedKey = ConsoleKey.Y;
-        
+
         static void Main(string[] args)
         {
             Console.WriteLine("We're gonna add contacts to your contact list! Press any key to add new contact.");
@@ -15,9 +15,51 @@ namespace ContactList
 
             while (pressedKey == ConsoleKey.Y)
             {
-            AddContact();
-            pressedKey = AskUserToContinue();
-            } 
+                AddContact();
+                pressedKey = AskUserToContinue();
+            }
+
+            PrintOut();
+            RemoveContact();
+            PrintOut();
+            SortContactList();
+            PrintOut();
+        }
+
+        private static void SortContactList()
+        {
+
+        }
+
+        private static void PrintOut()
+        {
+            Console.WriteLine("Press any key to see your contact list!");
+            Console.ReadLine();
+            Console.Clear();
+
+            for (int i = 0; i < contactList.Count; i++)
+            {
+                Console.WriteLine("\nCONTACT");
+                Console.WriteLine(contactList[i].FirstName);
+                Console.WriteLine(contactList[i].PhoneNumber);
+                Console.WriteLine(contactList[i].Email);
+                Console.WriteLine();
+            }
+        }
+
+        private static void RemoveContact()
+        {
+            Console.WriteLine("Now it's time to remove a contact from your list!\n");
+            Console.Write("Enter first name of contact you want to remove: ");
+            string name = Console.ReadLine();
+
+            for (int i = 0; i < contactList.Count; i++)
+            {
+                if (contactList[i].FirstName == name)
+                    contactList.RemoveAt(i);
+            }
+
+
         }
 
         static void AddContact()
