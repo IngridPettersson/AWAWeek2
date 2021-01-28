@@ -11,7 +11,6 @@ namespace PracticeProperties2
             Car[] cars = new Car[100];
             bool keepAsking = addedCars <= cars.Length ? true : false;
 
-
             while (keepAsking)
             {
                 Console.WriteLine("Press Enter if you want to add a car. If not, press any other key.");
@@ -36,14 +35,7 @@ namespace PracticeProperties2
         {
             Car car = new Car();
 
-            car.LicenseNumber = 
-            Console.WriteLine(car.LicenseNumber);
-
-            //car.GetLicenseNumber();
-            string inputColor = Car.AskForColor();
-            car.SetColor(inputColor);
-            car.GetColor();
-
+            car.LicenseNumber = Car.AskForLicNum();
 
             return car;
 

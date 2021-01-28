@@ -6,55 +6,91 @@ namespace PracticeProperties2
 {
     class Car
     {
-        private string licenseNumber = "ABC123";
         private string color;
+
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
+
+        private string licenseNumber;
 
         public string LicenseNumber
         {
-            get { return licenseNumber; }
-            set 
+            get { return licensenumber; }
+            set
             {
+                int number;
+                string licNumCorrectFormat = "ABC123";
                 
-                while (licenseNumber != value)
-                {
-                    
-                    int number;
-                    string substringNumbers;
-                    value = AskForLicNum();
-                    if (value.Length == 6)
-                    {
-                        substringNumbers = value.Substring(3);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Entered license number is either too short or too long. It must be exactly 6 characters long.");
-                        continue;
-                    }
+                string substringNumbers = "";
 
+                Console.Write("Enter license number of car, in the format \"ABC123\" or \"abc123\": ");
+                string inputLicNum = Console.ReadLine();
+                bool validInput = inputLicNum.Length == 6;
+
+                while (licenseNumber != licNumCorrectFormat)
+                {
+                    if (validInput)
+                    {
+                        inputLicNum = inputLicNum.ToUpper();
+                        string substringLetters = inputLicNum.Substring(0, 3);
+                        substringNumbers = inputLicNum.Substring(3);
+                        licNumCorrectFormat = $"*** {substringLetters} {substringNumbers} ***";
+                    }
                     if (int.TryParse(substringNumbers, out number) == true && number >= 0 && number <= 999)
                     {
-                        licenseNumber = value;
-                        licenseNumber = licenseNumber.ToUpper();
-                        string substringLetters = licenseNumber.Substring(0, 3);
-                        substringNumbers = licenseNumber.Substring(3);
-                        licenseNumber = $"*** {substringLetters} {substringNumbers} ***";
-                        
+                        licenseNumber = licNumCorrectFormat;
+                        licensenumber = value;
                     }
                     else
                     {
-                        Console.WriteLine("Invalid license number, please try again.");
+                        Console.Write("Invalid license number. Try again: ");
+                        inputLicNum = Console.ReadLine();
                         continue;
                     }
                 }
+
                 
             }
         }
 
+
+
         public static string AskForLicNum()
         {
+            int value;
+            string licNumCorrectFormat = "ABC123";
+            string licenseNumber = "";
+            string substringNumbers = "";
+
             Console.Write("Enter license number of car, in the format \"ABC123\" or \"abc123\": ");
             string inputLicNum = Console.ReadLine();
-            return inputLicNum;
+            bool validInput = inputLicNum.Length == 6;
+
+            while (licenseNumber != licNumCorrectFormat)
+            {
+                if (validInput)
+                {
+                    inputLicNum = inputLicNum.ToUpper();
+                    string substringLetters = inputLicNum.Substring(0, 3);
+                    substringNumbers = inputLicNum.Substring(3);
+                    licNumCorrectFormat = $"*** {substringLetters} {substringNumbers} ***";
+                }
+                if (int.TryParse(substringNumbers, out value) == true && value >= 0 && value <= 999)
+                {
+                    licenseNumber = licNumCorrectFormat;
+                }
+                else
+                {
+                    Console.Write("Invalid license number. Try again: ");
+                    inputLicNum = Console.ReadLine();
+                    continue;
+                }
+            }
+
+            return licenseNumber;
         }
 
 
