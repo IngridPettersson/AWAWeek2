@@ -11,5 +11,6 @@ namespace Epidemic
         public int InfectedWhen { get; set; }
         // When the person gets well after 5 hours (s)he can not get infected again
         public bool Immune { get; set; }
+        public int ImmuneWhen { get; set; }
     }
 }

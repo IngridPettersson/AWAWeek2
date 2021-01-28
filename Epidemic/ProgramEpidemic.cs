@@ -26,6 +26,7 @@ namespace Epidemic
                 Console.ReadLine();
                 Console.Clear();
                 hoursPassed++;
+                SpreadVirus(hoursPassed);
                 CalculateImmune(hoursPassed);
                 CalculateInfected(hoursPassed);
                 ListenToTegnell();
@@ -51,7 +52,7 @@ namespace Epidemic
             infectiousDancers++;
         }
 
-        private static void CalculateInfected(int hoursPassed) //måste lägga till minus antalet som blivit immuna den här vändan! 
+        private static void SpreadVirus(int hoursPassed) //måste lägga till minus antalet som blivit immuna den här vändan! 
         {
             int i;
             for (i = 0; i < discoDancers.Count; i ++)
@@ -69,6 +70,7 @@ namespace Epidemic
                             break;
                         } 
                     }
+                    
                 }
                 else
                 {
@@ -84,7 +86,19 @@ namespace Epidemic
                 if (discoDancers[i].Infected == true && hoursPassed - discoDancers[i].InfectedWhen == 5)
                 {
                     discoDancers[i].Immune = true;
+                    discoDancers[i].ImmuneWhen = hoursPassed;
                     immuneDancers++;
+                    
+                }
+            }
+        }
+
+        private static void CalculateInfected(int hoursPassed)
+        {
+            for (int i = 0; i < discoDancers.Count; i++)
+            {
+                if(discoDancers[i].Immune == true && discoDancers[i].ImmuneWhen == hoursPassed)
+                {
                     infectiousDancers--;
                 }
             }
@@ -93,7 +107,7 @@ namespace Epidemic
         private static void ListenToTegnell()
         {
             Console.Write($"Hours passed: {hoursPassed}\n");
-            Console.Write($"Infected: {infectiousDancers}\n");
+            Console.Write($"Infected: {infectiousDancers}\n"); // minus de som blev immuna denna timme
             Console.Write($"Immune: {immuneDancers}\n");
 
         }
