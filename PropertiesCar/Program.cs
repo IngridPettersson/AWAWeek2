@@ -30,8 +30,8 @@ namespace PropertiesCar
                     break;
                 else
                     Console.WriteLine($"CAR {i + 1}\nLicense Number: {cars[i].LicenseNumber}\nColor: {cars[i].Color}\n");
-
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private static void AddCar(Car[] cars, int index)
@@ -44,7 +44,6 @@ namespace PropertiesCar
                 car.Color = inputColor;
                 cars[index] = car;
             }
-
         }
 
         public static ConsoleKey GetUserInput()
