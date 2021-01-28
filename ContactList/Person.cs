@@ -12,12 +12,6 @@ namespace ContactList
         public string Email { get; set; }
 
 
-        public void AddPerson()
-        {
-
-        }
-
-
 
     }
 }
