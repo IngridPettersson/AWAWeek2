@@ -42,8 +42,9 @@ namespace Checkpoint2
                 new Person("Lo", "Pettersson", 55),
             };
 
-            Console.WriteLine($"Average age: {AverageAge(people, "Pettersson")}");
-            Console.WriteLine($"Median age: {MedianAge(people, "Pettersson")}");
+            //Console.WriteLine($"Average age: {AverageAge(people, "Pettersson")}");
+            //Console.WriteLine($"Median age: {MedianAge(people, "Pettersson")}");
+            Console.WriteLine($"Median age: {MedianAgeFlawless(people, "Pettersson")}");
         }
 
         static double AverageAge(Person[] people, string lastName)
@@ -125,6 +126,48 @@ namespace Checkpoint2
             }
 
             return Math.Round(medianAge, 1);
+        }
+
+        static double MedianAgeFlawless(Person[] people, string lastName)
+        {
+            double medianAge = 0.0;
+            int[] tempArr = new int[people.Length];
+            int counter = 0;
+
+            for (int i = 0; i < people.Length; i++)
+            {
+                if(people[i].LastName != lastName)
+                {
+                    tempArr[i] = people[i].Age;
+                } else if (people[i].LastName == lastName)
+                {
+                    tempArr[i] = -1;
+                    counter++;
+                }
+            }
+
+            Array.Sort(tempArr);
+            int newLength = people.Length - counter;
+            int[] newArr = new int[newLength];
+
+            for (int i = 0; i < newLength; i++)
+            {
+                newArr[i] = tempArr[counter + i];
+            }
+
+            if (newArr.Length % 2 != 0)
+                medianAge = newArr[newArr.Length / 2 + 1];
+            else if (newArr.Length % 2 == 0)
+            {
+                int medianHigh = newArr.Length / 2;
+                int medianLow = newArr.Length / 2 - 1;
+                medianAge = (newArr[medianHigh] + newArr[medianLow]) / 2.0;
+            }
+
+            return Math.Round(medianAge, 1);
+
+
+
         }
 
     }
