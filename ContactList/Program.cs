@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
 
 namespace ContactList
@@ -11,6 +14,14 @@ namespace ContactList
 
         static void Main(string[] args)
         {
+            // Spara ned kontakterna till en fil som sedan kan importeras vid start av program.
+            string filePath = @"C:\Users\ingri\Desktop\";
+
+            FileStream writerFileStream = new FileStream("ContactList.txt", FileMode.Create, FileAccess.Write);
+            
+
+
+
             Console.WriteLine("We're gonna add contacts to your contact list! Press any key to add new contact.");
             Console.ReadKey(true);
 
@@ -26,7 +37,12 @@ namespace ContactList
             contactList = SortContactList(contactList);
             PrintOut(contactList);
             ChangeContactInfo();
+            PrintOut(contactList);
+            DownloadContacts();
+        }
 
+        private static void DownloadContacts()
+        {
         }
 
         static void ChangeContactInfo()

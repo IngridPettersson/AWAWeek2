@@ -42,7 +42,7 @@ namespace Checkpoint2
                 new Person("Lo", "Pettersson", 55),
             };
 
-            //Console.WriteLine($"Average age: {AverageAge(people, "Pettersson")}");
+            Console.WriteLine($"Average age: {AverageAge(people, "Pettersson")}");
             //Console.WriteLine($"Median age: {MedianAge(people, "Pettersson")}");
             Console.WriteLine($"Median age: {MedianAgeFlawless(people, "Pettersson")}");
         }
@@ -66,67 +66,67 @@ namespace Checkpoint2
                 throw new Exception("Can not divide by zero.");
         }
 
-        static double MedianAge(Person[] people, string lastName)
-        {
-            Person savedPerson;
-            Person[] newPeople;
-            double medianAge = 0.0;
-            int lengthOfArray = people.Length;
+        //static double MedianAge(Person[] people, string lastName)
+        //{
+        //    Person savedPerson;
+        //    Person[] newPeople;
+        //    double medianAge = 0.0;
+        //    int lengthOfArray = people.Length;
 
-            for (int i = 0; i < people.Length; i++)
-            {
-                if (people[i].LastName == lastName)
-                {
-                    people[i].Age = 1;
-                    lengthOfArray--;
-                }
-            }
+        //    for (int i = 0; i < people.Length; i++)
+        //    {
+        //        if (people[i].LastName == lastName)
+        //        {
+        //            people[i].Age = 1;
+        //            lengthOfArray--;
+        //        }
+        //    }
 
-            newPeople = new Person[lengthOfArray];
-            int k = 0;
-            int p = 0;
+        //    newPeople = new Person[lengthOfArray];
+        //    int k = 0;
+        //    int p = 0;
 
-            while (k < people.Length)
-            {
-                if (people[k].Age != 1)
-                {
-                    savedPerson = new Person(people[k].FirstName, people[k].LastName, people[k].Age);
-                    newPeople[p] = savedPerson;
-                    p++;
-                }
-                k++;
-            }
+        //    while (k < people.Length)
+        //    {
+        //        if (people[k].Age != 1)
+        //        {
+        //            savedPerson = new Person(people[k].FirstName, people[k].LastName, people[k].Age);
+        //            newPeople[p] = savedPerson;
+        //            p++;
+        //        }
+        //        k++;
+        //    }
 
-            for (int i = 0; i < newPeople.Length - 1; i++)
-            {
-                int lvi = i;
+        //    for (int i = 0; i < newPeople.Length - 1; i++)
+        //    {
+        //        int lvi = i;
 
-                for (int j = i + 1; j < newPeople.Length; j++)
-                {
-                    if (newPeople[j].Age < newPeople[lvi].Age)
-                        lvi = j;
+        //        for (int j = i + 1; j < newPeople.Length; j++)
+        //        {
+        //            if (newPeople[j].Age < newPeople[lvi].Age)
+        //                lvi = j;
 
-                }
+        //        }
 
-                if (lvi != i)
-                {
-                    int tempInt = newPeople[i].Age;
-                    newPeople[i].Age = newPeople[lvi].Age;
-                    newPeople[lvi].Age = tempInt;
-                }
-            }
+        //        if (lvi != i)
+        //        {
+        //            int tempInt = newPeople[i].Age;
+        //            newPeople[i].Age = newPeople[lvi].Age;
+        //            newPeople[lvi].Age = tempInt;
+        //        }
+        //    }
 
-            if (newPeople.Length % 2 != 0)
-                medianAge = newPeople[newPeople.Length / 2 + 1].Age;
-            else if (newPeople.Length % 2 == 0)
-            {
-                int medianHigh = newPeople.Length / 2;
-                int medianLow = newPeople.Length / 2 - 1;
-                medianAge = (newPeople[medianHigh].Age + newPeople[medianLow].Age) / 2.0;
-            }
+        //    if (newPeople.Length % 2 != 0)
+        //        medianAge = newPeople[newPeople.Length / 2 + 1].Age;
+        //    else if (newPeople.Length % 2 == 0)
+        //    {
+        //        int medianHigh = newPeople.Length / 2;
+        //        int medianLow = newPeople.Length / 2 - 1;
+        //        medianAge = (newPeople[medianHigh].Age + newPeople[medianLow].Age) / 2.0;
+        //    }
 
-            return Math.Round(medianAge, 1);
-        }
+        //    return Math.Round(medianAge, 1);
+        //}
 
         static double MedianAgeFlawless(Person[] people, string lastName)
         {

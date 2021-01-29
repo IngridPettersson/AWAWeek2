@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace ContactList
 {
+    [Serializable]
     class Person
     {
-
         public string FirstName { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
