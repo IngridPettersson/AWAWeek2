@@ -10,9 +10,9 @@ namespace ClassesInstancesAndConstructors
         public string CoachName { get; set; }
         public int SquadSize { get; set; }
 
-        public FootballTeam() : this("N/A", "N/A", -1) // Vi anropar här en annan constructor-metod.
-        {
-        }
+        //public FootballTeam() : this("N/A", "N/A", -1) // Vi anropar här en annan constructor-metod.
+        //{
+        //}
 
         public FootballTeam(string teamName = "N/A", string coachName = "N/A", int squadSize = 10)
         {

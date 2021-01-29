@@ -6,7 +6,7 @@ namespace Epidemic
     class ProgramEpidemic
     {
         static List<Person> discoDancers = new List<Person>();
-        static int dancersAtDisco = 1000;
+        static int dancersTotal = 1000;
         static int hoursPassed = 0;
         static int infectiousDancers = 0;
         static int immuneDancers = 0;
@@ -26,20 +26,20 @@ namespace Epidemic
                 Console.ReadLine();
                 Console.Clear();
                 hoursPassed++;
-                SpreadVirus(hoursPassed);
                 CalculateImmune(hoursPassed);
-                CalculateInfected(hoursPassed);
+                SpreadVirus(hoursPassed);
+                //CalculateInfected(hoursPassed);
                 ListenToTegnell();
                 Console.WriteLine();
             }
 
-            Console.WriteLine($"Wohooo - {dancersAtDisco} dancers infected and immune after just {hoursPassed} hours! Must have been a Swedish disco ;)");
+            Console.WriteLine($"Wohooo! {dancersTotal} dancers infected and immune after just {hoursPassed} hours! Must have been a Swedish disco ;)");
             Console.ReadLine();
         }
 
         private static void AddPeopleToList()
         {
-            for (int i = 0; i < dancersAtDisco; i++)
+            for (int i = 0; i < dancersTotal; i++)
             {
                 Person dancer = new Person();
                 discoDancers.Add(dancer);
@@ -55,22 +55,27 @@ namespace Epidemic
         private static void SpreadVirus(int hoursPassed) //måste lägga till minus antalet som blivit immuna den här vändan! 
         {
             int i;
-            for (i = 0; i < discoDancers.Count; i ++)
+            for (i = 0; i < discoDancers.Count; i++)
             {
                 if (discoDancers[i].Infected == true && discoDancers[i].InfectedWhen < hoursPassed)
                 {
-                   
-                    for (int j = i + 1; j < discoDancers.Count; j++)
+                    if (discoDancers[i].ImmuneWhen != hoursPassed)
                     {
-                        if (discoDancers[j].Infected == false)
+                        for (int j = i + 1; j < discoDancers.Count; j++)
                         {
-                            discoDancers[j].Infected = true;
-                            discoDancers[j].InfectedWhen = hoursPassed;
-                            infectiousDancers++;
-                            break;
-                        } 
+                            if (discoDancers[j].Infected == false)
+                            {
+                                discoDancers[j].Infected = true;
+                                discoDancers[j].InfectedWhen = hoursPassed;
+                                infectiousDancers++;
+                                break;
+                            }
+                        }
                     }
-                    
+                    else
+                    {
+                        continue;
+                    }
                 }
                 else
                 {
@@ -88,21 +93,21 @@ namespace Epidemic
                     discoDancers[i].Immune = true;
                     discoDancers[i].ImmuneWhen = hoursPassed;
                     immuneDancers++;
-                    
+                    //infectiousDancers--;
                 }
             }
         }
 
-        private static void CalculateInfected(int hoursPassed)
-        {
-            for (int i = 0; i < discoDancers.Count; i++)
-            {
-                if(discoDancers[i].Immune == true && discoDancers[i].ImmuneWhen == hoursPassed)
-                {
-                    infectiousDancers--;
-                }
-            }
-        }
+        //private static void CalculateInfected(int hoursPassed)
+        //{
+        //    for (int i = 0; i < discoDancers.Count; i++)
+        //    {
+        //        if (discoDancers[i].Immune == true && discoDancers[i].ImmuneWhen == hoursPassed)
+        //        {
+        //            infectiousDancers--;
+        //        }
+        //    }
+        //}
 
         private static void ListenToTegnell()
         {

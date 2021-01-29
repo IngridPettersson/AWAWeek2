@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab11List", "Lab11List\Lab1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactList", "ContactList\ContactList.csproj", "{49038B27-83F0-48F4-905F-09880FDA600A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertiesCar", "PropertiesCar\PropertiesCar.csproj", "{7DBAE6A5-A2CE-42F2-BCC5-C44A95C09ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertiesCar", "PropertiesCar\PropertiesCar.csproj", "{7DBAE6A5-A2CE-42F2-BCC5-C44A95C09ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkpoint2", "Checkpoint2\Checkpoint2.csproj", "{FBAE7018-C14E-407D-8B39-64657D6EE0A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{7DBAE6A5-A2CE-42F2-BCC5-C44A95C09ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DBAE6A5-A2CE-42F2-BCC5-C44A95C09ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DBAE6A5-A2CE-42F2-BCC5-C44A95C09ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAE7018-C14E-407D-8B39-64657D6EE0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAE7018-C14E-407D-8B39-64657D6EE0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAE7018-C14E-407D-8B39-64657D6EE0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAE7018-C14E-407D-8B39-64657D6EE0A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

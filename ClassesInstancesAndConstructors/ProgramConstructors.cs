@@ -9,13 +9,15 @@ namespace ClassesInstancesAndConstructors
 
 
             // default parameters
-            double moms = MomsBelopp(100);
-            Console.WriteLine(moms);
-            double moms2 = MomsBelopp(100, 0.12);
-            Console.WriteLine(moms2);
+            //double moms = MomsBelopp(100);
+            //Console.WriteLine(moms);
+            //double moms2 = MomsBelopp(100, 0.12);
+            //Console.WriteLine(moms2);
 
-
-
+            FootballTeam myTeam = new FootballTeam();
+            Console.WriteLine(myTeam.CoachName);
+            double number = 5.0;
+            Console.WriteLine(number / 2);
             //FootballTeam team = new FootballTeam("Academy", "Håkan", 23);
 
             //FootballTeam[] myTeams = new FootballTeam[3]
@@ -34,9 +36,9 @@ namespace ClassesInstancesAndConstructors
             //myCar.IncreaseCurrentSpeed(2);
         }
 
-        static double MomsBelopp(double belopp, double momsSats = 0.25)
-        {
-            return belopp * momsSats;
-        }
+        //static double MomsBelopp(double belopp, double momsSats = 0.25)
+        //{
+        //    return belopp * momsSats;
+        //}
     }
 }
